@@ -1,0 +1,15 @@
+
+//Query 1
+
+SELECT COUNT(*) AS "Number of employees", FORMAT(HireDate, 'MMMM') 'MonthName'  FROM HumanResources.Employee GROUP BY(FORMAT(HireDate, 'MMMM'))
+
+
+
+// Query 2
+SELECT COUNT(*) AS "Number of employees", Name AS Department_Name
+FROM HumanResources.EmployeeDepartmentHistory AS DB1, HumanResources.Department AS DB2, HumanResources.Employee AS DB3
+WHERE DB1.DepartmentID = DB2.DepartmentID AND DB1.BusinessEntityID = DB3.BusinessEntityID 
+GROUP BY(Name)
+
+
+
